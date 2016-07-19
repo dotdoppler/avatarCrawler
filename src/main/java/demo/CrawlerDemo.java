@@ -15,7 +15,6 @@ import java.io.IOException;
 public class CrawlerDemo {
     public static void main(String[] args) throws IOException {
         MyHttpClient myHttpClient = new MyHttpClient(GlobalConstans.BASE_TARGET_URL + "isea533");
-        myHttpClient.sendRequest();
         String content = myHttpClient.getResponseDocument();
         Document document =Jsoup.parse(content);
         String nickName = document.getElementsByClass("person-nick-name").tagName("span").text();
